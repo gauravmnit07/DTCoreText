@@ -99,7 +99,7 @@
 	
 	DTCSSListStyle *effectiveList = [self.paragraphStyle.textLists lastObject];
 	DTHTMLElement *listRoot = self.parentElement;
-	NSUInteger listCounter = [self _indexOfListItemInListRoot:listRoot]+effectiveList.startingItemNumber;
+	NSInteger listCounter = [self _indexOfListItemInListRoot:listRoot]+effectiveList.startingItemNumber;
 	
 	// make a temporary version of self that has same font attributes as list root
 	DTListItemHTMLElement *tmpCopy = [[DTListItemHTMLElement alloc] init];

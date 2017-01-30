@@ -75,11 +75,11 @@
 	return NO;
 }
 
-- (NSInteger)headerLevel
+- (NSUInteger)headerLevel
 {
 	NSNumber *headerLevelNum = [self objectForKey:DTHeaderLevelAttribute];
 	
-	return [headerLevelNum integerValue];
+	return [headerLevelNum unsignedIntegerValue];
 }
 
 - (BOOL)hasAttachment
