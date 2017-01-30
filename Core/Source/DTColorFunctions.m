@@ -14,15 +14,16 @@ static NSDictionary *colorLookup = nil;
 
 #pragma mark - Private Functions
 
-NSInteger _integerValueFromHexString(NSString *hexString);
+unsigned int _integerValueFromHexString(NSString *hexString);
 
 #pragma mark - Implementations
 
-NSInteger _integerValueFromHexString(NSString *hexString)
+unsigned int _integerValueFromHexString(NSString *hexString)
 {
 	int result = 0;
 	sscanf([hexString UTF8String], "%x", &result);
-	return result;
+	unsigned int unsignedValue = result > 0 ? result : 0;
+	return unsignedValue;
 }
 
 //- (BOOL)isNumeric
@@ -51,9 +52,9 @@ DTColor *DTColorCreateWithHexString(NSString *hexString)
 	NSUInteger digits = [hexString length]/3;
 	CGFloat maxValue = (digits==1)?15.0:255.0;
 	
-	NSUInteger redValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(0, digits)]);
-	NSUInteger greenValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(digits, digits)]);
-	NSUInteger blueValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(2*digits, digits)]);
+	unsigned int redValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(0, digits)]);
+	unsigned int greenValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(digits, digits)]);
+	unsigned int blueValue = _integerValueFromHexString([hexString substringWithRange:NSMakeRange(2*digits, digits)]);
 	
 	CGFloat red = redValue/maxValue;
 	CGFloat green = greenValue/maxValue;
