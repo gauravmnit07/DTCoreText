@@ -6,10 +6,10 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => 'https://github.com/gauravmnit07/DTCoreText.git', :branch => 'develop' }
   spec.source_files = 'Core/Source/*.{h,m,c}'
   spec.ios.source_files = 'Core/Source/iOS/*.{h,m,c}'
-  spec.dependency 'DTFoundation/Core', :git => 'https://github.com/gauravmnit07/DTFoundation.git', :branch => 'develop'
-  spec.dependency 'DTFoundation/UIKit', :git => 'https://github.com/gauravmnit07/DTFoundation.git', :branch => 'develop'
-  spec.dependency 'DTFoundation/DTHTMLParser', :git => 'https://github.com/gauravmnit07/DTFoundation.git', :branch => 'develop'
-  spec.dependency 'DTFoundation/DTAnimatedGIF', :git => 'https://github.com/gauravmnit07/DTFoundation.git', :branch => 'develop'
+  spec.dependency 'DTFoundation/Core',
+  spec.dependency 'DTFoundation/UIKit',
+  spec.dependency 'DTFoundation/DTHTMLParser',
+  spec.dependency 'DTFoundation/DTAnimatedGIF',
   spec.frameworks   = 'MediaPlayer', 'QuartzCore', 'CoreText', 'CoreGraphics', 'ImageIO'
   spec.requires_arc = true
   spec.homepage     = 'https://github.com/gauravmnit07/DTCoreText'
